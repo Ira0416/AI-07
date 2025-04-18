@@ -15,12 +15,12 @@ def load_image():
         return None
 
 
-st.title('Распознай японский текст с изображения!')
+st.title('Распознай русский текст с изображения!')
 img = load_image()
 
 result = st.button('Распознать изображение')
 if result:
-    captioner = pipeline("image-to-text", model="kha-white/manga-ocr-base")
+    captioner = pipeline("image-to-text", model="Akajackson/donut_rus")
     text = captioner(img)
     st.write('**Результаты распознавания:**')
     st.write(text[0]["generated_text"])
